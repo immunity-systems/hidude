@@ -1,0 +1,35 @@
+OK - complete do set'a
+OK - przerobic helpa, zeby ladnie pokazywal interesujace komendy
+OK - AUTOCOMPLETE INFO
+OK - PAYLOAD abstract class
+OK - module execute
+- DIGISPARK KLAWIATURA
+- DIGISPARK MYSZ
+OK - Dorobic parametry DEVICE
+OK - Dorobic parametry payload
+OK - dodac w info parameter obluge parametrow device i payload
+OK - dodac w info informacje o aktywnych parametrach device i payload
+OK - naprawic justowanie w show -l
+OK - prompt powinien pokazywac custom albo nazwe payloadu
+OK - dodac info payload <payload>
+OK - dodac parametry w info device <device>
+OK - dodac domyslny payload i device jak cos jest aktywne
+OK - dodac walidacje device i payload przy use pod katem abilities
+OK - dorobic USE PAYLOAD i device
+OK - dorobic error message, z helpem
+OK - dorobic autocomplete use payload i use device
+OK - LIST PAYLOAD
+OK - LIST DEVICES
+OK - show - musi pokazywac poparawnie payload
+OK - info parameter musi obslugiwac payload
+OK - naprawic buga use module <aktywny modul> (ladowanie payloada)
+OK - DODAC validatory payloadu dla coreowych akcji
+OK - DODAC dokumentacje dla coreowych akcji 
+OK - DODAC parametr od stacktrace przy ladowaniu modulow
+OK - dodac list_actions
+OK - dodac info action <akcja>
+OK - dodac nieescapowanie stringow w parsowaniu payloadu
+OK - walidacja payloadu od strony device (to bedzie w program i chuj)
+- dodac mozliwosc robienia modulow bez payload
+- dodac molziwosc robienia modulow bez device i payload
+OK - dodaj poczekajke jakies wrzeciono !
