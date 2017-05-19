@@ -1,0 +1,1733 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>HID Hacker Inside Dude 0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="None" href="index.html#document-index" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="welcome-to-hid-hacker-inside-dude-s-documentation">
+<h1>Welcome to HID Hacker Inside Dude&#8217;s documentation!<a class="headerlink" href="#welcome-to-hid-hacker-inside-dude-s-documentation" title="Permalink to this headline">¶</a></h1>
+<p>Contents:</p>
+<div class="toctree-wrapper compound">
+<span id="document-intro"></span><div class="section" id="introduction">
+<h2>Introduction.<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>We started the HID project to get both open hardware and open software to use during our Red Teaming activities.</p>
+<div class="section" id="why">
+<h3>Why?<a class="headerlink" href="#why" title="Permalink to this headline">¶</a></h3>
+<p>To make some input into open source community.</p>
+</div>
+<div class="section" id="for-whom">
+<h3>For whom?<a class="headerlink" href="#for-whom" title="Permalink to this headline">¶</a></h3>
+<p>It&#8217;s for white hats, engineers and all other who wants to play with it.</p>
+</div>
+<div class="section" id="disclaimer">
+<h3>Disclaimer.<a class="headerlink" href="#disclaimer" title="Permalink to this headline">¶</a></h3>
+<p>The HID project is for demosration and ethical hacking activities. Mind that in most countries hacking is illegal and such activities can hava some legal consequeces.</p>
+<p>Mind also that the project is in early stage, and the documentation is not yet completed.</p>
+</div>
+</div>
+<span id="document-licence"></span><div class="section" id="licence">
+<h2>Licence.<a class="headerlink" href="#licence" title="Permalink to this headline">¶</a></h2>
+<p>Copyright (c) 2017, Immunity Systems (www.immunity-systems.com).</p>
+<p>All rights reserved.</p>
+<p>Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:</p>
+<ol class="arabic simple">
+<li>Redistributions of source code must retain the above copyright
+notice, this list of conditions and the following disclaimer.</li>
+<li>Redistributions in binary form must reproduce the above copyright
+notice, this list of conditions and the following disclaimer in the
+documentation and/or other materials provided with the distribution.</li>
+<li>All advertising materials mentioning features or use of this software
+must display the following acknowledgement:
+This product includes software developed by the Immunity Systems.</li>
+<li>Neither the name of the Immunity Systems nor the
+names of its contributors may be used to endorse or promote products
+derived from this software without specific prior written permission.</li>
+</ol>
+<p>THIS SOFTWARE IS PROVIDED BY IMMUNITY SYSTEMS &#8216;&#8217;AS IS&#8217;&#8217; AND ANY
+EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL IMMUNITY SYSTEMS BE LIABLE FOR ANY
+DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
+</div>
+<span id="document-authors"></span><div class="section" id="authors">
+<h2>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="karol-celinski">
+<h3>Karol Celiński<a class="headerlink" href="#karol-celinski" title="Permalink to this headline">¶</a></h3>
+<p>Immunity Systems</p>
+</div>
+<div class="section" id="pawel-maziarz">
+<h3>Paweł Maziarz<a class="headerlink" href="#pawel-maziarz" title="Permalink to this headline">¶</a></h3>
+<p>Immunity Systems</p>
+</div>
+<div class="section" id="andrzej-nowodworski">
+<h3>Andrzej Nowodworski<a class="headerlink" href="#andrzej-nowodworski" title="Permalink to this headline">¶</a></h3>
+<p>Immunity Systems</p>
+</div>
+</div>
+<span id="document-immunity"></span><div class="section" id="immunity-systems">
+<h2>Immunity Systems<a class="headerlink" href="#immunity-systems" title="Permalink to this headline">¶</a></h2>
+<p>This project is held by Immunity Systems.</p>
+<p>Immunity Systems is a young, highly specialized company engaged in the full range of issues related to IT security. The main asset of the company is a team of enthusiasts with over ten years experience in the IT security offensive and defensive including system implementation and verification of the levels of security systems implemented. The company&#8217;s goal is to provide customers with systems and services that will ensure the highest level of security of their information and business processes while maintaining an optimal level of costs incurred.</p>
+</div>
+<span id="document-requirements"></span><div class="section" id="project-requirements">
+<h2>Project requirements.<a class="headerlink" href="#project-requirements" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="modules">
+<h3>Modules.<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h3>
+<p>There are several modules required to run Hacker Inside Dude. Below is the list of those, which are uncommon, and you&#8217;ll probably need to install them.</p>
+<ul class="simple">
+<li>intelhex</li>
+<li>cmd2</li>
+</ul>
+</div>
+<div class="section" id="privilidges">
+<h3>Privilidges.<a class="headerlink" href="#privilidges" title="Permalink to this headline">¶</a></h3>
+<p>The user running Hacker Inside Dude should have access to USB drivers.</p>
+</div>
+</div>
+<span id="document-quickstart"></span><div class="section" id="quick-start-guide">
+<h2>Quick start Guide.<a class="headerlink" href="#quick-start-guide" title="Permalink to this headline">¶</a></h2>
+<p>The following guide is for those who just want to start using Hacker Inside Dude. If you are going to contribute to the project or want to dig in deep into the code, please refer to the API documentation.</p>
+<div class="section" id="concept">
+<h3>Concept.<a class="headerlink" href="#concept" title="Permalink to this headline">¶</a></h3>
+<p>The basic concept of the HID is going about relation between modules, devices and payloads. First two are required and third one is optional. So main thing is to select the module and then the device. It is enough to configure your required action and program it on the selected device. Additionaly you can choose or define your custom payload for each module.</p>
+<p>The simple usage is as follows:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">HackerInsideDude</span><span class="o">.</span><span class="n">py</span>
+<span class="n">use</span> <span class="n">module</span> <span class="o">&lt;</span><span class="n">module_name</span><span class="o">&gt;</span>
+<span class="n">use</span> <span class="n">device</span> <span class="o">&lt;</span><span class="n">device</span><span class="o">&gt;</span>
+<span class="n">execute</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="getting-help">
+<h3>Getting help.<a class="headerlink" href="#getting-help" title="Permalink to this headline">¶</a></h3>
+<p>If you need some help at any time you can type:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">help</span>
+</pre></div>
+</div>
+<p>To get more specified help you can type:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">help</span> <span class="o">&lt;</span><span class="n">command_name</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>There is always an option to get some detailed informations about modules, devices and payloads. To get it just type:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">info</span>
+</pre></div>
+</div>
+<p>to get informations and actual configuration of current module, device and payload. Or you can type:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">info</span> <span class="n">module</span> <span class="o">&lt;</span><span class="n">module_name</span><span class="o">&gt;</span>
+<span class="n">info</span> <span class="n">device</span> <span class="o">&lt;</span><span class="n">device_name</span><span class="o">&gt;</span>
+<span class="n">info</span> <span class="n">payload</span> <span class="o">&lt;</span><span class="n">payload_name</span><span class="o">&gt;</span>
+<span class="n">info</span> <span class="n">action</span> <span class="o">&lt;</span><span class="n">action_name</span><span class="o">&gt;</span>
+<span class="n">info</span> <span class="n">parameter</span> <span class="o">&lt;</span><span class="n">parameter_name</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>to get revelant informations about specific module, device, payload, action or parameter.</p>
+</div>
+<div class="section" id="modules">
+<h3>Modules.<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h3>
+<p>Modules are determining witch kind of USB device we will be simulating on the device. For now it could be keyboard, mouse or both at the same time. To list all avaliable modules just type:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">list_modules</span>
+</pre></div>
+</div>
+<p>To use some module just type:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">use</span> <span class="n">module</span> <span class="o">&lt;</span><span class="n">module_name</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>At any time you can get detailed informations about modules by typing:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">info</span> <span class="n">module</span> <span class="o">&lt;</span><span class="n">module_name</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>or if you&#8217;ve already selected module just type:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">info</span>
+</pre></div>
+</div>
+<p>In that second option you will get all informations and actual configuration of current module you are using.</p>
+</div>
+<div class="section" id="devices">
+<h3>Devices.<a class="headerlink" href="#devices" title="Permalink to this headline">¶</a></h3>
+<p>The devices are used in natural way. You just select on which device you are going to program your activities. Currently we are supporting two different devices: EspusbWS and Digispark. To list all avaliable devices just type:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">list_devices</span>
+</pre></div>
+</div>
+<p>When you are listing the devices at the end of the line in [ brackets, there are modules names, which are supported by each device. To use a specific device with your module just type:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">use</span> <span class="n">device</span> <span class="o">&lt;</span><span class="n">device_name</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>At any time you can get the detailed informations about devices by typing:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">info</span> <span class="n">device</span> <span class="o">&lt;</span><span class="n">device_name</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>or if you&#8217;ve already selected device just type:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">info</span>
+</pre></div>
+</div>
+<p>In that case you will get all informations and actual configuration of current module and current device.</p>
+</div>
+<div class="section" id="payloads">
+<h3>Payloads.<a class="headerlink" href="#payloads" title="Permalink to this headline">¶</a></h3>
+<p>In each module there is a possibility to use defined or custom payload. To list avaliable payloads just type:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">list_payloads</span>
+</pre></div>
+</div>
+<p>When you are listing the payloads at the end of the line in [ brackets, there are modules names in which you can use specified payload. To use a specific payload with your module just type:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">use</span> <span class="n">payload</span> <span class="o">&lt;</span><span class="n">payload_name</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>At any time you can get the detailed informations about payload by typing:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">info</span> <span class="n">payload</span> <span class="o">&lt;</span><span class="n">payload_name</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>or if you&#8217;ve already selected the payload or defined your custom one just type:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">info</span>
+</pre></div>
+</div>
+<p>In that second option you will get all informations and actual configuration of current module, device and payload you are using. Instead of using avaliable payloads you can define your own, custom one. To do that you have to set payload parametr and within it, specify your all payload options. An example of custom payload is as follows:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>set payload ``
+</pre></div>
+</div>
+<p>There is a list of avaliable keys you can use in your payload in here.</p>
+</div>
+<div class="section" id="actions">
+<h3>Actions.<a class="headerlink" href="#actions" title="Permalink to this headline">¶</a></h3>
+<p>Actions are connected with devices. They specify what kind of actions are allowed on spiecified device. To list all allowed action just type:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">list_actions</span>
+</pre></div>
+</div>
+<p>When you are listing the payloads at the end of the line in [ brackets, there are devices names for which actions are allowed. You can use the actions within a payload. The special action <cite>program</cite> is used by execute command to program the device.</p>
+</div>
+<div class="section" id="writting-your-own-module-device-payload">
+<h3>Writting your own module/device/payload.<a class="headerlink" href="#writting-your-own-module-device-payload" title="Permalink to this headline">¶</a></h3>
+<p>You can write your own module, device or payload code. Just mind the concept of that project. Below there are some code examples.</p>
+<p>Module:</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37</pre></div></td><td class="code"><div class="highlight"><pre><span></span>      <span class="kn">from</span> <span class="nn">action_manager</span> <span class="kn">import</span> <span class="n">action_manager</span>
+
+      <span class="k">class</span> <span class="nc">Module</span><span class="p">:</span>
+      <span class="n">name</span> <span class="o">=</span> <span class="bp">None</span>
+      <span class="n">short_description</span> <span class="o">=</span> <span class="bp">None</span>
+      <span class="n">description</span> <span class="o">=</span> <span class="bp">None</span>
+      <span class="n">required_actions</span> <span class="o">=</span> <span class="p">[]</span>
+      <span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span>
+              <span class="s1">&#39;param&#39;</span><span class="p">:</span> <span class="p">{</span>
+                      <span class="s1">&#39;description&#39;</span><span class="p">:</span><span class="s2">&quot;Param description&quot;</span><span class="p">,</span>
+                      <span class="s1">&#39;default&#39;</span><span class="p">:</span><span class="s2">&quot;DEFAULT VALUE&quot;</span><span class="p">,</span>
+                      <span class="s1">&#39;required&#39;</span><span class="p">:</span><span class="s2">&quot;True&quot;</span><span class="p">,</span>
+              <span class="p">}</span>
+      <span class="p">}</span>
+
+      <span class="n">payload_actions</span> <span class="o">=</span> <span class="p">[]</span>
+
+      <span class="k">def</span> <span class="nf">get_available_devices</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+              <span class="k">return</span> <span class="n">action_manager</span><span class="o">.</span><span class="n">get_supported_devices</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">required_actions</span><span class="p">)</span>
+
+
+      <span class="k">def</span> <span class="nf">validate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+              <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">              Should validate all parameters. This method is called in execute.</span>
+<span class="sd">              Return error message or empty string.</span>
+<span class="sd">              &quot;&quot;&quot;</span>
+              <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+
+      <span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">paylad</span><span class="p">,</span> <span class="n">device</span><span class="p">):</span>
+              <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">              It&#39;s executed after all parameters all set.</span>
+<span class="sd">              If all ok return &quot;&quot; else return error string.</span>
+<span class="sd">              &quot;&quot;&quot;</span>
+              <span class="k">pass</span>
+
+      <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+              <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+</pre></div>
+</td></tr></table></div>
+<p>Device:</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58</pre></div></td><td class="code"><div class="highlight"><pre><span></span>      <span class="k">class</span> <span class="nc">Device</span><span class="p">:</span>
+          <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;abstract class&quot;</span>
+          <span class="n">info</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+          <span class="n">short_description</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+          <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">          Device parameters</span>
+<span class="sd">          &quot;&quot;&quot;</span>
+          <span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span>
+                  <span class="s1">&#39;param&#39;</span><span class="p">:</span> <span class="p">{</span>
+                          <span class="s1">&#39;description&#39;</span><span class="p">:</span><span class="s2">&quot;Param description&quot;</span><span class="p">,</span>
+                          <span class="s1">&#39;default&#39;</span><span class="p">:</span><span class="s2">&quot;DEFAULT VALUE&quot;</span><span class="p">,</span>
+                          <span class="s1">&#39;required&#39;</span><span class="p">:</span><span class="s2">&quot;True&quot;</span><span class="p">,</span>
+                          <span class="s1">&#39;value&#39;</span><span class="p">:</span><span class="s2">&quot;DEFAULT VALUE&quot;</span>
+                  <span class="p">}</span>
+          <span class="p">}</span>
+          <span class="k">def</span> <span class="nf">dependency_check</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+              <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">              Check if device got all required library on this machine</span>
+<span class="sd">              Return error message or empty string if all is ok.</span>
+<span class="sd">              &quot;&quot;&quot;</span>
+              <span class="k">pass</span>
+
+          <span class="k">def</span> <span class="nf">get_actions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+              <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">              Return actions provided by device.</span>
+<span class="sd">              &quot;&quot;&quot;</span>
+              <span class="n">actions</span> <span class="o">=</span> <span class="p">[]</span>
+              <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+                  <span class="k">if</span> <span class="n">m</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;action_&quot;</span><span class="p">):</span>
+                      <span class="n">actions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;action_&quot;</span><span class="p">))</span>
+              <span class="k">return</span> <span class="n">actions</span>
+
+          <span class="k">def</span> <span class="nf">perform_action</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">ability</span><span class="p">,</span><span class="nb">input</span><span class="p">):</span>
+              <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">              Execute action</span>
+<span class="sd">              &quot;&quot;&quot;</span>
+              <span class="k">if</span> <span class="s2">&quot;action_&quot;</span><span class="o">+</span><span class="n">ability</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+                  <span class="k">raise</span> <span class="s2">&quot;Unknown action!&quot;</span>
+              <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="s2">&quot;action_&quot;</span><span class="o">+</span><span class="n">ability</span><span class="p">)(</span><span class="nb">input</span><span class="p">)</span>
+
+          <span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+              <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">              Return some information about device.</span>
+<span class="sd">              &quot;&quot;&quot;</span>
+              <span class="k">return</span> <span class="n">info</span>
+
+          <span class="k">def</span> <span class="nf">validate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+              <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">              Should validate all parameters. This method is called in execute.</span>
+<span class="sd">              Return error message or empty string.</span>
+<span class="sd">              &quot;&quot;&quot;</span>
+              <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+
+          <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+              <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">              Print name of device.</span>
+<span class="sd">              &quot;&quot;&quot;</span>
+              <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+</pre></div>
+</td></tr></table></div>
+<p>Payload:</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41</pre></div></td><td class="code"><div class="highlight"><pre><span></span>      <span class="k">class</span> <span class="nc">Payload</span><span class="p">:</span>
+          <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">          Name of payload.</span>
+<span class="sd">          &quot;&quot;&quot;</span>
+          <span class="n">name</span> <span class="o">=</span> <span class="bp">None</span>
+          <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">          Description.</span>
+<span class="sd">          &quot;&quot;&quot;</span>
+          <span class="n">info</span> <span class="o">=</span> <span class="bp">None</span>
+          <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">          Shor description</span>
+<span class="sd">          &quot;&quot;&quot;</span>
+          <span class="n">short_description</span> <span class="o">=</span> <span class="bp">None</span>
+          <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">          Actions that are satisfied by payload.</span>
+<span class="sd">          &quot;&quot;&quot;</span>
+          <span class="n">satisfied_actions</span> <span class="o">=</span> <span class="p">[]</span>
+          <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">          Payload parameters</span>
+<span class="sd">          &quot;&quot;&quot;</span>
+          <span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span>
+                  <span class="s1">&#39;param&#39;</span><span class="p">:</span> <span class="p">{</span>
+                          <span class="s1">&#39;description&#39;</span><span class="p">:</span><span class="s2">&quot;Param description&quot;</span><span class="p">,</span>
+                          <span class="s1">&#39;default&#39;</span><span class="p">:</span><span class="s2">&quot;DEFAULT VALUE&quot;</span><span class="p">,</span>
+                          <span class="s1">&#39;required&#39;</span><span class="p">:</span><span class="s2">&quot;True&quot;</span><span class="p">,</span>
+                          <span class="s2">&quot;value&quot;</span><span class="p">:</span><span class="s2">&quot;DEFAULT VALUE&quot;</span>
+                  <span class="p">}</span>
+          <span class="p">}</span>
+
+          <span class="k">def</span> <span class="nf">get_payload</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+              <span class="k">return</span> <span class="bp">None</span>
+
+          <span class="k">def</span> <span class="nf">validate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+                  <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                  Should validate all parameters. This method is called before get_payload in execute.</span>
+<span class="sd">                  Return error message or empty string.</span>
+<span class="sd">                  &quot;&quot;&quot;</span>
+                  <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+
+          <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+              <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+</pre></div>
+</td></tr></table></div>
+<p>Also please refere to list of keywords for special and functional keys, which can be foud <a class="reference internal" href="index.html#kkk"><span class="std std-ref">Keyboard keys keywords.</span></a>.</p>
+</div>
+</div>
+<span id="document-kkk"></span><div class="section" id="keyboard-keys-keywords">
+<span id="kkk"></span><h2>Keyboard keys keywords.<a class="headerlink" href="#keyboard-keys-keywords" title="Permalink to this headline">¶</a></h2>
+<p>Here is a list of keywords for functional and special keys:</p>
+<ul class="simple">
+<li>Again</li>
+<li>AlternateErase</li>
+<li>Application</li>
+<li>Cancel</li>
+<li>CapsLock</li>
+<li>Clear</li>
+<li>Clear</li>
+<li>ClearAgain</li>
+<li>Copy</li>
+<li>CrSelProps</li>
+<li>Cut</li>
+<li>DELETE</li>
+<li>DeleteForward</li>
+<li>DownArrow</li>
+<li>End</li>
+<li>ENTER</li>
+<li>ESCAPE</li>
+<li>Execute</li>
+<li>ExSel</li>
+<li>F1</li>
+<li>F10</li>
+<li>F11</li>
+<li>F12</li>
+<li>F13</li>
+<li>F14</li>
+<li>F15</li>
+<li>F16</li>
+<li>F17</li>
+<li>F18</li>
+<li>F19</li>
+<li>F2</li>
+<li>F20</li>
+<li>F21</li>
+<li>F22</li>
+<li>F23</li>
+<li>F24</li>
+<li>F3</li>
+<li>F4</li>
+<li>F5</li>
+<li>F6</li>
+<li>F7</li>
+<li>F8</li>
+<li>F9</li>
+<li>Find</li>
+<li>GraveAccent</li>
+<li>Help</li>
+<li>Home</li>
+<li>Insert</li>
+<li>International1</li>
+<li>International2</li>
+<li>International3</li>
+<li>International4</li>
+<li>International5</li>
+<li>International6</li>
+<li>International7</li>
+<li>International8</li>
+<li>International9</li>
+<li>KeypadAsterisk</li>
+<li>KeypadComma</li>
+<li>KeypadDelete</li>
+<li>KeypadDot</li>
+<li>KeypadDownArrow</li>
+<li>KeypadEight</li>
+<li>KeypadEnd</li>
+<li>KeypadENTER</li>
+<li>KeypadEqualSign</li>
+<li>KeypadEqualSign</li>
+<li>KeypadFive</li>
+<li>KeypadFour</li>
+<li>KeypadHome</li>
+<li>KeypadInsert</li>
+<li>KeypadLeftArrow</li>
+<li>KeypadMinus</li>
+<li>KeypadNine</li>
+<li>KeypadNumLock</li>
+<li>KeypadOne</li>
+<li>KeypadPageDn</li>
+<li>KeypadPageUp</li>
+<li>KeypadPlus</li>
+<li>KeypadRightArrow</li>
+<li>KeypadSeven</li>
+<li>KeypadSix</li>
+<li>KeypadSlash</li>
+<li>KeypadThree</li>
+<li>KeypadTwo</li>
+<li>KeypadUpArrow</li>
+<li>KeypadZero</li>
+<li>LANG1</li>
+<li>LANG2</li>
+<li>LANG3</li>
+<li>LANG4</li>
+<li>LANG5</li>
+<li>LANG6</li>
+<li>LANG7</li>
+<li>LANG8</li>
+<li>LANG9</li>
+<li>LeftAlt</li>
+<li>LeftArrow</li>
+<li>LeftControl</li>
+<li>LeftGUI</li>
+<li>LeftShift</li>
+<li>LockingCapsLock</li>
+<li>LockingNumLock</li>
+<li>LockingScrollLock</li>
+<li>Menu</li>
+<li>Mute</li>
+<li>NonUSBackslash</li>
+<li>NonUSHash</li>
+<li>NonUSPipe</li>
+<li>Oper</li>
+<li>Out</li>
+<li>PageDown</li>
+<li>PageUp</li>
+<li>Paste</li>
+<li>Pause</li>
+<li>Power</li>
+<li>PrintScreen</li>
+<li>Prior</li>
+<li>Return</li>
+<li>RighShift</li>
+<li>RightAlt</li>
+<li>RightArrow</li>
+<li>RightControl</li>
+<li>RightGUI</li>
+<li>ScrollLock</li>
+<li>Select</li>
+<li>Separator</li>
+<li>Spacebar or &#8216; &#8216;</li>
+<li>Stop</li>
+<li>SysReq</li>
+<li>Tab</li>
+<li>Tilde</li>
+<li>Undo</li>
+<li>UpArrow</li>
+<li>VolumeDown</li>
+<li>VolumeUp</li>
+</ul>
+<p>For detailed list of supported keys please refer to keyboard_write.py source code from core/actions.</p>
+</div>
+<span id="document-source"></span><div class="section" id="api-documentation">
+<h2>API Documentation<a class="headerlink" href="#api-documentation" title="Permalink to this headline">¶</a></h2>
+<p>Below you can find an API docs.</p>
+</div>
+<div class="section" id="module-HackerInsideDude">
+<span id="hackerinsidedude-module"></span><h2>HackerInsideDude module<a class="headerlink" href="#module-HackerInsideDude" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="HackerInsideDude.HID">
+<em class="property">class </em><code class="descclassname">HackerInsideDude.</code><code class="descname">HID</code><span class="sig-paren">(</span><em>completekey='tab'</em>, <em>stdin=None</em>, <em>stdout=None</em>, <em>use_ipython=False</em><span class="sig-paren">)</span><a class="headerlink" href="#HackerInsideDude.HID" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">cmd2.Cmd</span></code></p>
+<dl class="attribute">
+<dt id="HackerInsideDude.HID.active_device">
+<code class="descname">active_device</code><em class="property"> = None</em><a class="headerlink" href="#HackerInsideDude.HID.active_device" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HackerInsideDude.HID.active_module">
+<code class="descname">active_module</code><em class="property"> = None</em><a class="headerlink" href="#HackerInsideDude.HID.active_module" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HackerInsideDude.HID.active_payload">
+<code class="descname">active_payload</code><em class="property"> = None</em><a class="headerlink" href="#HackerInsideDude.HID.active_payload" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="HackerInsideDude.HID.complete_info">
+<code class="descname">complete_info</code><span class="sig-paren">(</span><em>text</em>, <em>line</em>, <em>begidx</em>, <em>endidx</em><span class="sig-paren">)</span><a class="headerlink" href="#HackerInsideDude.HID.complete_info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="HackerInsideDude.HID.complete_set">
+<code class="descname">complete_set</code><span class="sig-paren">(</span><em>text</em>, <em>line</em>, <em>begidx</em>, <em>endidx</em><span class="sig-paren">)</span><a class="headerlink" href="#HackerInsideDude.HID.complete_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="HackerInsideDude.HID.complete_use">
+<code class="descname">complete_use</code><span class="sig-paren">(</span><em>text</em>, <em>line</em>, <em>begidx</em>, <em>endidx</em><span class="sig-paren">)</span><a class="headerlink" href="#HackerInsideDude.HID.complete_use" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HackerInsideDude.HID.current_parameters">
+<code class="descname">current_parameters</code><em class="property"> = {'device': [], 'payload': [], 'module': []}</em><a class="headerlink" href="#HackerInsideDude.HID.current_parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="HackerInsideDude.HID.default">
+<code class="descname">default</code><span class="sig-paren">(</span><em>line</em><span class="sig-paren">)</span><a class="headerlink" href="#HackerInsideDude.HID.default" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="HackerInsideDude.HID.do_execute">
+<code class="descname">do_execute</code><span class="sig-paren">(</span><em>line</em><span class="sig-paren">)</span><a class="headerlink" href="#HackerInsideDude.HID.do_execute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Execute module. To use commend first use module, device and set payload !</p>
+<p>Usage: just type execute and voilla!</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="HackerInsideDude.HID.do_help">
+<code class="descname">do_help</code><span class="sig-paren">(</span><em>arg</em><span class="sig-paren">)</span><a class="headerlink" href="#HackerInsideDude.HID.do_help" title="Permalink to this definition">¶</a></dt>
+<dd><p>List available commands with &#8220;help&#8221; or detailed help with &#8220;help cmd&#8221;.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="HackerInsideDude.HID.do_info">
+<code class="descname">do_info</code><span class="sig-paren">(</span><em>line</em><span class="sig-paren">)</span><a class="headerlink" href="#HackerInsideDude.HID.do_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print information about components.</p>
+<p>Usage: info [COMPONENT ARGUMENT]
+Where  COMPONENT is one of module, device, payload, parameter.</p>
+<p>Syntax:
+* info - print info about active module, device and payload.
+* info device [DEVICE_NAME] - print info about device (submitted as argument or active).
+* info module [MODULE_NAME] - print info about module (submitted as argument or active).
+* info payload [PAYLOAD_NAME] - print info about payload (submitted as argument or active).
+* info action [ACTION_NAME] - print info about action (see list_actions for available names).
+* info parameter OPTION_NAME - print info about parameter in active module, payload or device.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="HackerInsideDude.HID.do_list_actions">
+<code class="descname">do_list_actions</code><span class="sig-paren">(</span><em>line</em><span class="sig-paren">)</span><a class="headerlink" href="#HackerInsideDude.HID.do_list_actions" title="Permalink to this definition">¶</a></dt>
+<dd><p>List all loaded actions with short description and devices supporting them.</p>
+<p>Usage: Just type list_actions without arguments to see what was loaded.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="HackerInsideDude.HID.do_list_devices">
+<code class="descname">do_list_devices</code><span class="sig-paren">(</span><em>line</em><span class="sig-paren">)</span><a class="headerlink" href="#HackerInsideDude.HID.do_list_devices" title="Permalink to this definition">¶</a></dt>
+<dd><p>List all loaded devices with short description and modules able to use them.</p>
+<p>Usage: Just type list_devices without arguments to see what was loaded.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="HackerInsideDude.HID.do_list_modules">
+<code class="descname">do_list_modules</code><span class="sig-paren">(</span><em>line</em><span class="sig-paren">)</span><a class="headerlink" href="#HackerInsideDude.HID.do_list_modules" title="Permalink to this definition">¶</a></dt>
+<dd><p>List all loaded modules with short description and supported devices.</p>
+<p>Usage: Just type list_modules without arguments to see what was loaded.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="HackerInsideDude.HID.do_list_payloads">
+<code class="descname">do_list_payloads</code><span class="sig-paren">(</span><em>line</em><span class="sig-paren">)</span><a class="headerlink" href="#HackerInsideDude.HID.do_list_payloads" title="Permalink to this definition">¶</a></dt>
+<dd><p>List all loaded payloads with short description and modules able to use them.</p>
+<p>Usage: Just type list_payloads without arguments to see what was loaded.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="HackerInsideDude.HID.do_set">
+<code class="descname">do_set</code><span class="sig-paren">(</span><em>line</em><span class="sig-paren">)</span><a class="headerlink" href="#HackerInsideDude.HID.do_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a settable parameter.</p>
+<p>Accepts abbreviated parameter names so long as there is no ambiguity.
+Call without arguments for a list of settable parameters with their values.
+Command can be used to set parameter of active module, payload, device or 
+global options.</p>
+<p>To set custom payload just use: set payload &#8220;some value&#8221;
+To load payload from predefined list see help use.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="HackerInsideDude.HID.do_show">
+<code class="descname">do_show</code><span class="sig-paren">(</span><em>instance</em>, <em>arg</em><span class="sig-paren">)</span><a class="headerlink" href="#HackerInsideDude.HID.do_show" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shows value of a parameter.
+Usage: show [options] arg</p>
+<dl class="docutils">
+<dt>Options:</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-h</span>, <span class="option">--help</span></kbd></td>
+<td>show this help message and exit</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-l</span>, <span class="option">--long</span></kbd></td>
+<td>describe function of parameter</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>Usage: show [options] arg</p>
+<dl class="docutils">
+<dt>Options:</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-h</span>, <span class="option">--help</span></kbd></td>
+<td>show this help message and exit</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-l</span>, <span class="option">--long</span></kbd></td>
+<td>describe function of parameter</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="HackerInsideDude.HID.do_use">
+<code class="descname">do_use</code><span class="sig-paren">(</span><em>line</em><span class="sig-paren">)</span><a class="headerlink" href="#HackerInsideDude.HID.do_use" title="Permalink to this definition">¶</a></dt>
+<dd><p>Activate selected module, payload or device.</p>
+<dl class="docutils">
+<dt>Usage: </dt>
+<dd>use module &lt;module name&gt; 
+use device &lt;device name&gt; - only when module is selected!
+use payload &lt;payload name&gt; - only when module is selected!</dd>
+</dl>
+<p>Please use TAB for completion.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HackerInsideDude.HID.doc_header">
+<code class="descname">doc_header</code><em class="property"> = 'to be initialized'</em><a class="headerlink" href="#HackerInsideDude.HID.doc_header" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="HackerInsideDude.HID.get_names_hack">
+<code class="descname">get_names_hack</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#HackerInsideDude.HID.get_names_hack" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HackerInsideDude.HID.important_commands">
+<code class="descname">important_commands</code><em class="property"> = ['do_list_devices', 'do_list_modules', 'do_list_payloads', 'do_list_actions', 'do_info', 'do_use', 'do_show', 'do_execute']</em><a class="headerlink" href="#HackerInsideDude.HID.important_commands" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="HackerInsideDude.HID.info_action">
+<code class="descname">info_action</code><span class="sig-paren">(</span><em>arg</em><span class="sig-paren">)</span><a class="headerlink" href="#HackerInsideDude.HID.info_action" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="HackerInsideDude.HID.info_device">
+<code class="descname">info_device</code><span class="sig-paren">(</span><em>arg</em><span class="sig-paren">)</span><a class="headerlink" href="#HackerInsideDude.HID.info_device" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="HackerInsideDude.HID.info_module">
+<code class="descname">info_module</code><span class="sig-paren">(</span><em>arg</em><span class="sig-paren">)</span><a class="headerlink" href="#HackerInsideDude.HID.info_module" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="HackerInsideDude.HID.info_parameter">
+<code class="descname">info_parameter</code><span class="sig-paren">(</span><em>arg</em><span class="sig-paren">)</span><a class="headerlink" href="#HackerInsideDude.HID.info_parameter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="HackerInsideDude.HID.info_payload">
+<code class="descname">info_payload</code><span class="sig-paren">(</span><em>arg</em><span class="sig-paren">)</span><a class="headerlink" href="#HackerInsideDude.HID.info_payload" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HackerInsideDude.HID.intro">
+<code class="descname">intro</code><em class="property"> = '\x1b[34m                                     .-:/+osyhhddmmmNNNNNmmmddhyso+:            \n                             .:+sydNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMy            \n                        ./sdNMMMMMMMMMMMMMNmddhyyysssyyyhhdNMMMMMMM+            \n                    .+yNMMMMMMMMMmhs+/-.`                   `-/sdMM.            \n                 :smMMMMMMNds+:.                     `hyso/-`    `-             \n              -sNMMMMMds/.                           `MMMMMMMNds/`              \n           .omMMMMms:`                               `MMMMMMMMMMMMdo.           \n         -yMMMMd+.                                    -:/osydNMMMMMMMd/         \n       -hMMMNs.                      sdhs                     `:ohNMMMMm/       \n     `sMMMm+`                        dMMh            yMN:/dd+      :yMMMMd.     \n    .mMMNo`                          dMMo     .smNmh.yMMdso/         `oNMMN/    \n   :NMMd. ---`                       dMM/ :/`.NMd`hM/sMMs              .hMMM/   \n  -NMMs   NMMh                 -/:`  dMM:hMy.oMMydd+ oMM-                sMMN.  \n `mMM+    mMMs        --     :mMmNM+ hMMMm:  yMM:`-+.+MM.                 sMMy  \n +MMs     dMM/      .hMMMd: :MMh`oMy yMM+hMm./MMsdMm:-sy`                 `NMN` \n mMN`     dMM--yy+``mMh.dMm mMm   `  yMN `mMy -oys:       +Nm+             sMM- \n`MMs      dMMyNNMMs`/+/+mMM NMy .sMd`sMm  oMN.    .-      oMMo  `+hhy+     +MM: \n-MM/      dMM+ :MMh`yMmydMM`.yNdMm+`  ``         .mMh     oMM/ .mMm/NMo    oMM. \n:MM:      dMN   NMm.NmoodMM.   ..            :o. ``.   +dNMMM/`mMm:hMN:    mMm  \n-MMs      hMd   hMN .oys+yh.`-`            +NMMy hMM. yMM/oMM//MMmds//.   +MM/  \n NMN.     :s+   :yy         yMh`ymd:.ss+``mMMd+. sMM`:MM+ sMM--MM/ +NMs  +MMs   \n :MMm`                     `/+/ yMMhdmMM/`hMN:   sMM`yMM`.dMM- -smNNs. `sMMs    \n  /MMN:                    .MMN yMMd`:MMs  .oNNo +MM`+MMmNoMM-       `+NMN:     \n   -mMMh.                  `MMm sMM: `NMm   .mMM.:MM  -oo. ym:     .sNMNo`      \n    `sMMMh:                 MMh oMM-  yMM-`sMMN:  --            .+dMMNo`        \n      .sNMMms-              MMy /NM.  :MMs.yh+`             `:smMMMd/`          \n        `+mMMMNho-`         dMy        -/:              -+smMMMMmo.             \n           -odMMMMMmyo:.                           .-/ohmMMMMMMdo-                \n              `/smMMMMMMMNdhso+/:::--:://+osyhdNMMMMMMMMNds:`                   \n                  `-+sdNMMMMMMMMMMMMMMMMMMMMMMMMMNmhs+:.                        \n                        `-:/+osyyhhhdhhhyyso+/:.`                               \n\x1b[39m\x1b[31m\n                                                                          DUDE...                                    \n\x1b[39m'</em><a class="headerlink" href="#HackerInsideDude.HID.intro" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HackerInsideDude.HID.modules">
+<code class="descname">modules</code><em class="property"> = {}</em><a class="headerlink" href="#HackerInsideDude.HID.modules" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="HackerInsideDude.HID.option_argument_complete">
+<code class="descname">option_argument_complete</code><span class="sig-paren">(</span><em>text</em>, <em>line</em>, <em>begidx</em>, <em>endidx</em>, <em>option_arguments_map</em><span class="sig-paren">)</span><a class="headerlink" href="#HackerInsideDude.HID.option_argument_complete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HackerInsideDude.HID.payload">
+<code class="descname">payload</code><em class="property"> = ''</em><a class="headerlink" href="#HackerInsideDude.HID.payload" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HackerInsideDude.HID.payloads">
+<code class="descname">payloads</code><em class="property"> = {}</em><a class="headerlink" href="#HackerInsideDude.HID.payloads" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="HackerInsideDude.HID.preloop">
+<code class="descname">preloop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#HackerInsideDude.HID.preloop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HackerInsideDude.HID.prompt">
+<code class="descname">prompt</code><em class="property"> = '\x1b[32mHID &gt; \x1b[39m'</em><a class="headerlink" href="#HackerInsideDude.HID.prompt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HackerInsideDude.HID.ruler">
+<code class="descname">ruler</code><em class="property"> = ''</em><a class="headerlink" href="#HackerInsideDude.HID.ruler" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="HackerInsideDude.HID.use_device">
+<code class="descname">use_device</code><span class="sig-paren">(</span><em>line</em><span class="sig-paren">)</span><a class="headerlink" href="#HackerInsideDude.HID.use_device" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="HackerInsideDude.HID.use_module">
+<code class="descname">use_module</code><span class="sig-paren">(</span><em>line</em><span class="sig-paren">)</span><a class="headerlink" href="#HackerInsideDude.HID.use_module" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="HackerInsideDude.HID.use_payload">
+<code class="descname">use_payload</code><span class="sig-paren">(</span><em>line</em><span class="sig-paren">)</span><a class="headerlink" href="#HackerInsideDude.HID.use_payload" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="core-package">
+<h2>core package<a class="headerlink" href="#core-package" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="subpackages">
+<h3>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h3>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="submodules">
+<h3>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="module-core.action">
+<span id="core-action-module"></span><h3>core.action module<a class="headerlink" href="#module-core.action" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="core.action.Action">
+<em class="property">class </em><code class="descclassname">core.action.</code><code class="descname">Action</code><a class="headerlink" href="#core.action.Action" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of action.</p>
+<dl class="attribute">
+<dt id="core.action.Action.info">
+<code class="descname">info</code><em class="property"> = None</em><a class="headerlink" href="#core.action.Action.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Short description</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="core.action.Action.name">
+<code class="descname">name</code><em class="property"> = None</em><a class="headerlink" href="#core.action.Action.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="core.action.Action.short_description">
+<code class="descname">short_description</code><em class="property"> = None</em><a class="headerlink" href="#core.action.Action.short_description" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="core.action.Action.validate">
+<code class="descname">validate</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="headerlink" href="#core.action.Action.validate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Should validate payload syntax and return error string or empty string.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-core.action_manager">
+<span id="core-action-manager-module"></span><h3>core.action_manager module<a class="headerlink" href="#module-core.action_manager" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="core.action_manager.ActionManager">
+<em class="property">class </em><code class="descclassname">core.action_manager.</code><code class="descname">ActionManager</code><a class="headerlink" href="#core.action_manager.ActionManager" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="core.action_manager.ActionManager.actions">
+<code class="descname">actions</code><em class="property"> = {'mouse_move': &lt;core.actions.mouse_move.mouse_move instance&gt;, 'program': &lt;core.actions.program.program instance&gt;, 'sleep': &lt;core.actions.sleep.sleep instance&gt;, 'keyboard_write': &lt;core.actions.keyboard_write.keyboard_write instance&gt;}</em><a class="headerlink" href="#core.action_manager.ActionManager.actions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="core.action_manager.ActionManager.actions_map">
+<code class="descname">actions_map</code><em class="property"> = {}</em><a class="headerlink" href="#core.action_manager.ActionManager.actions_map" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="core.action_manager.ActionManager.device_map">
+<code class="descname">device_map</code><em class="property"> = {}</em><a class="headerlink" href="#core.action_manager.ActionManager.device_map" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="core.action_manager.ActionManager.devices">
+<code class="descname">devices</code><em class="property"> = []</em><a class="headerlink" href="#core.action_manager.ActionManager.devices" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="core.action_manager.ActionManager.filter_supported_modules">
+<code class="descname">filter_supported_modules</code><span class="sig-paren">(</span><em>obj</em>, <em>module_list</em><span class="sig-paren">)</span><a class="headerlink" href="#core.action_manager.ActionManager.filter_supported_modules" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="core.action_manager.ActionManager.get_all_devices">
+<code class="descname">get_all_devices</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#core.action_manager.ActionManager.get_all_devices" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="core.action_manager.ActionManager.get_all_devices_str">
+<code class="descname">get_all_devices_str</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#core.action_manager.ActionManager.get_all_devices_str" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="core.action_manager.ActionManager.get_supported_devices">
+<code class="descname">get_supported_devices</code><span class="sig-paren">(</span><em>required_actions</em><span class="sig-paren">)</span><a class="headerlink" href="#core.action_manager.ActionManager.get_supported_devices" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="core.action_manager.ActionManager.parse_payload">
+<code class="descname">parse_payload</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="headerlink" href="#core.action_manager.ActionManager.parse_payload" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="core.action_manager.ActionManager.register_device">
+<code class="descname">register_device</code><span class="sig-paren">(</span><em>device</em><span class="sig-paren">)</span><a class="headerlink" href="#core.action_manager.ActionManager.register_device" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="core.action_manager.ActionManager.validate_payload">
+<code class="descname">validate_payload</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="headerlink" href="#core.action_manager.ActionManager.validate_payload" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-core.consts">
+<span id="core-consts-module"></span><h3>core.consts module<a class="headerlink" href="#module-core.consts" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="module-core.device">
+<span id="core-device-module"></span><h3>core.device module<a class="headerlink" href="#module-core.device" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="core.device.Device">
+<em class="property">class </em><code class="descclassname">core.device.</code><code class="descname">Device</code><a class="headerlink" href="#core.device.Device" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="core.device.Device.dependency_check">
+<code class="descname">dependency_check</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#core.device.Device.dependency_check" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if device got all required library on this machine</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="core.device.Device.get_actions">
+<code class="descname">get_actions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#core.device.Device.get_actions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return actions provided by device.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="core.device.Device.info">
+<code class="descname">info</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#core.device.Device.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return some information about device.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="core.device.Device.name">
+<code class="descname">name</code><em class="property"> = 'abstract class'</em><a class="headerlink" href="#core.device.Device.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="core.device.Device.parameters">
+<code class="descname">parameters</code><em class="property"> = {'param': {'default': 'DEFAULT VALUE', 'required': 'True', 'description': 'Param description', 'value': 'DEFAULT VALUE'}}</em><a class="headerlink" href="#core.device.Device.parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="core.device.Device.perform_action">
+<code class="descname">perform_action</code><span class="sig-paren">(</span><em>ability</em>, <em>input</em><span class="sig-paren">)</span><a class="headerlink" href="#core.device.Device.perform_action" title="Permalink to this definition">¶</a></dt>
+<dd><p>Execute action</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="core.device.Device.short_description">
+<code class="descname">short_description</code><em class="property"> = ''</em><a class="headerlink" href="#core.device.Device.short_description" title="Permalink to this definition">¶</a></dt>
+<dd><p>Device parameters</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="core.device.Device.validate">
+<code class="descname">validate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#core.device.Device.validate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Should validate all parameters. This method is called in execute.
+Return error message or empty string.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-core.module">
+<span id="core-module-module"></span><h3>core.module module<a class="headerlink" href="#module-core.module" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="core.module.Module">
+<em class="property">class </em><code class="descclassname">core.module.</code><code class="descname">Module</code><a class="headerlink" href="#core.module.Module" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="core.module.Module.description">
+<code class="descname">description</code><em class="property"> = None</em><a class="headerlink" href="#core.module.Module.description" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="core.module.Module.execute">
+<code class="descname">execute</code><span class="sig-paren">(</span><em>paylad</em>, <em>device</em><span class="sig-paren">)</span><a class="headerlink" href="#core.module.Module.execute" title="Permalink to this definition">¶</a></dt>
+<dd><p>It&#8217;s executed after all parameters all set.
+If all ok return &#8220;&#8221; else return error string.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="core.module.Module.get_available_devices">
+<code class="descname">get_available_devices</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#core.module.Module.get_available_devices" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="core.module.Module.name">
+<code class="descname">name</code><em class="property"> = None</em><a class="headerlink" href="#core.module.Module.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="core.module.Module.parameters">
+<code class="descname">parameters</code><em class="property"> = {'param': {'default': 'DEFAULT VALUE', 'required': 'True', 'description': 'Param description'}}</em><a class="headerlink" href="#core.module.Module.parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="core.module.Module.payload_actions">
+<code class="descname">payload_actions</code><em class="property"> = []</em><a class="headerlink" href="#core.module.Module.payload_actions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="core.module.Module.required_actions">
+<code class="descname">required_actions</code><em class="property"> = []</em><a class="headerlink" href="#core.module.Module.required_actions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="core.module.Module.short_description">
+<code class="descname">short_description</code><em class="property"> = None</em><a class="headerlink" href="#core.module.Module.short_description" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="core.module.Module.validate">
+<code class="descname">validate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#core.module.Module.validate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Should validate all parameters. This method is called in execute.
+Return error message or empty string.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-core.payload">
+<span id="core-payload-module"></span><h3>core.payload module<a class="headerlink" href="#module-core.payload" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="core.payload.Payload">
+<em class="property">class </em><code class="descclassname">core.payload.</code><code class="descname">Payload</code><a class="headerlink" href="#core.payload.Payload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of payload.</p>
+<dl class="method">
+<dt id="core.payload.Payload.get_payload">
+<code class="descname">get_payload</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#core.payload.Payload.get_payload" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="core.payload.Payload.info">
+<code class="descname">info</code><em class="property"> = None</em><a class="headerlink" href="#core.payload.Payload.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shor description</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="core.payload.Payload.name">
+<code class="descname">name</code><em class="property"> = None</em><a class="headerlink" href="#core.payload.Payload.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="core.payload.Payload.parameters">
+<code class="descname">parameters</code><em class="property"> = {'param': {'default': 'DEFAULT VALUE', 'required': 'True', 'description': 'Param description', 'value': 'DEFAULT VALUE'}}</em><a class="headerlink" href="#core.payload.Payload.parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="core.payload.Payload.satisfied_actions">
+<code class="descname">satisfied_actions</code><em class="property"> = []</em><a class="headerlink" href="#core.payload.Payload.satisfied_actions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Payload parameters</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="core.payload.Payload.short_description">
+<code class="descname">short_description</code><em class="property"> = None</em><a class="headerlink" href="#core.payload.Payload.short_description" title="Permalink to this definition">¶</a></dt>
+<dd><p>Actions that are satisfied by payload.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="core.payload.Payload.validate">
+<code class="descname">validate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#core.payload.Payload.validate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Should validate all parameters. This method is called before get_payload in execute.
+Return error message or empty string.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-core.validators">
+<span id="core-validators-module"></span><h3>core.validators module<a class="headerlink" href="#module-core.validators" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="core.validators.is_bool">
+<code class="descclassname">core.validators.</code><code class="descname">is_bool</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#core.validators.is_bool" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="core.validators.is_number">
+<code class="descclassname">core.validators.</code><code class="descname">is_number</code><span class="sig-paren">(</span><em>s</em>, <em>positive=False</em><span class="sig-paren">)</span><a class="headerlink" href="#core.validators.is_number" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-core.various">
+<span id="core-various-module"></span><h3>core.various module<a class="headerlink" href="#module-core.various" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="core.various.bold">
+<code class="descclassname">core.various.</code><code class="descname">bold</code><span class="sig-paren">(</span><em>txt</em><span class="sig-paren">)</span><a class="headerlink" href="#core.various.bold" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="core.various.colorize">
+<code class="descclassname">core.various.</code><code class="descname">colorize</code><span class="sig-paren">(</span><em>color</em>, <em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#core.various.colorize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="core.various.print_color">
+<code class="descclassname">core.various.</code><code class="descname">print_color</code><span class="sig-paren">(</span><em>color</em>, <em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#core.various.print_color" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="core.various.print_warning">
+<code class="descclassname">core.various.</code><code class="descname">print_warning</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#core.various.print_warning" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="core.various.strip_escape">
+<code class="descclassname">core.various.</code><code class="descname">strip_escape</code><span class="sig-paren">(</span><em>txt</em><span class="sig-paren">)</span><a class="headerlink" href="#core.various.strip_escape" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-core">
+<span id="module-contents"></span><h3>Module contents<a class="headerlink" href="#module-core" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="core-actions-package">
+<h2>core.actions package<a class="headerlink" href="#core-actions-package" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>Submodules<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="module-core.actions.keyboard_write">
+<span id="core-actions-keyboard-write-module"></span><h3>core.actions.keyboard_write module<a class="headerlink" href="#module-core.actions.keyboard_write" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="core.actions.keyboard_write.init">
+<code class="descclassname">core.actions.keyboard_write.</code><code class="descname">init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#core.actions.keyboard_write.init" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="core.actions.keyboard_write.keyboard_write">
+<em class="property">class </em><code class="descclassname">core.actions.keyboard_write.</code><code class="descname">keyboard_write</code><a class="headerlink" href="#core.actions.keyboard_write.keyboard_write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#core.action.Action" title="core.action.Action"><code class="xref py py-class docutils literal"><span class="pre">core.action.Action</span></code></a></p>
+<dl class="attribute">
+<dt id="core.actions.keyboard_write.keyboard_write.info">
+<code class="descname">info</code><em class="property"> = 'move_move is action that command device to move cursor in x and y direction (values can be negative). \n\nBelowe payload will command device to move mouse 10 in x and y, wait 1s and go back:\n\nmouse_move(10,10);\nsleep(1000);\nmouse_move(-10,-10);\n    '</em><a class="headerlink" href="#core.actions.keyboard_write.keyboard_write.info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="core.actions.keyboard_write.keyboard_write.name">
+<code class="descname">name</code><em class="property"> = 'keyboard_write'</em><a class="headerlink" href="#core.actions.keyboard_write.keyboard_write.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="core.actions.keyboard_write.keyboard_write.short_description">
+<code class="descname">short_description</code><em class="property"> = 'Move mouse in in x,y direction. Arguments can be negative'</em><a class="headerlink" href="#core.actions.keyboard_write.keyboard_write.short_description" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="core.actions.keyboard_write.keyboard_write.validate">
+<code class="descname">validate</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="headerlink" href="#core.actions.keyboard_write.keyboard_write.validate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-core.actions.mouse_move">
+<span id="core-actions-mouse-move-module"></span><h3>core.actions.mouse_move module<a class="headerlink" href="#module-core.actions.mouse_move" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="core.actions.mouse_move.init">
+<code class="descclassname">core.actions.mouse_move.</code><code class="descname">init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#core.actions.mouse_move.init" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="core.actions.mouse_move.mouse_move">
+<em class="property">class </em><code class="descclassname">core.actions.mouse_move.</code><code class="descname">mouse_move</code><a class="headerlink" href="#core.actions.mouse_move.mouse_move" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#core.action.Action" title="core.action.Action"><code class="xref py py-class docutils literal"><span class="pre">core.action.Action</span></code></a></p>
+<dl class="attribute">
+<dt id="core.actions.mouse_move.mouse_move.info">
+<code class="descname">info</code><em class="property"> = 'move_move is action that command device to move cursor in x and y direction (values can be negative). \n\nBelowe payload will command device to move mouse 10 in x and y, wait 1s and go back:\n\nmouse_move(10,10);\nsleep(1000);\nmouse_move(-10,-10);\n    '</em><a class="headerlink" href="#core.actions.mouse_move.mouse_move.info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="core.actions.mouse_move.mouse_move.name">
+<code class="descname">name</code><em class="property"> = 'mouse_move'</em><a class="headerlink" href="#core.actions.mouse_move.mouse_move.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="core.actions.mouse_move.mouse_move.short_description">
+<code class="descname">short_description</code><em class="property"> = 'Move mouse in in x,y direction. Arguments can be negative'</em><a class="headerlink" href="#core.actions.mouse_move.mouse_move.short_description" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="core.actions.mouse_move.mouse_move.validate">
+<code class="descname">validate</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="headerlink" href="#core.actions.mouse_move.mouse_move.validate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-core.actions.program">
+<span id="core-actions-program-module"></span><h3>core.actions.program module<a class="headerlink" href="#module-core.actions.program" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="core.actions.program.init">
+<code class="descclassname">core.actions.program.</code><code class="descname">init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#core.actions.program.init" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="core.actions.program.program">
+<em class="property">class </em><code class="descclassname">core.actions.program.</code><code class="descname">program</code><a class="headerlink" href="#core.actions.program.program" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#core.action.Action" title="core.action.Action"><code class="xref py py-class docutils literal"><span class="pre">core.action.Action</span></code></a></p>
+<dl class="attribute">
+<dt id="core.actions.program.program.info">
+<code class="descname">info</code><em class="property"> = &quot;This action can't be used in payload. It's only for marking programming ability in device.\n\n    &quot;</em><a class="headerlink" href="#core.actions.program.program.info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="core.actions.program.program.name">
+<code class="descname">name</code><em class="property"> = 'program'</em><a class="headerlink" href="#core.actions.program.program.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="core.actions.program.program.short_description">
+<code class="descname">short_description</code><em class="property"> = 'Programming ability of device. Not for payload.'</em><a class="headerlink" href="#core.actions.program.program.short_description" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="core.actions.program.program.validate">
+<code class="descname">validate</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="headerlink" href="#core.actions.program.program.validate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-core.actions.sleep">
+<span id="core-actions-sleep-module"></span><h3>core.actions.sleep module<a class="headerlink" href="#module-core.actions.sleep" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="core.actions.sleep.init">
+<code class="descclassname">core.actions.sleep.</code><code class="descname">init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#core.actions.sleep.init" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="core.actions.sleep.sleep">
+<em class="property">class </em><code class="descclassname">core.actions.sleep.</code><code class="descname">sleep</code><a class="headerlink" href="#core.actions.sleep.sleep" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#core.action.Action" title="core.action.Action"><code class="xref py py-class docutils literal"><span class="pre">core.action.Action</span></code></a></p>
+<dl class="attribute">
+<dt id="core.actions.sleep.sleep.info">
+<code class="descname">info</code><em class="property"> = 'Sleep is action that command device to wait fixed miliseconds before execute next action. \n\nBelowe payload will command device to wait 1s before executing next action:\n\nsleep(1000)\n    '</em><a class="headerlink" href="#core.actions.sleep.sleep.info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="core.actions.sleep.sleep.name">
+<code class="descname">name</code><em class="property"> = 'sleep'</em><a class="headerlink" href="#core.actions.sleep.sleep.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="core.actions.sleep.sleep.short_description">
+<code class="descname">short_description</code><em class="property"> = 'Sleep provided number of miliseconds'</em><a class="headerlink" href="#core.actions.sleep.sleep.short_description" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="core.actions.sleep.sleep.validate">
+<code class="descname">validate</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="headerlink" href="#core.actions.sleep.sleep.validate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="id2">
+<h3>Module contents<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<span class="target" id="module-core.actions"></span></div>
+</div>
+<div class="section" id="modules-package">
+<h2>modules package<a class="headerlink" href="#modules-package" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>Submodules<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="module-modules.hid_keyboard">
+<span id="modules-hid-keyboard-module"></span><h3>modules.hid_keyboard module<a class="headerlink" href="#module-modules.hid_keyboard" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="modules.hid_keyboard.hid_keyboard">
+<em class="property">class </em><code class="descclassname">modules.hid_keyboard.</code><code class="descname">hid_keyboard</code><a class="headerlink" href="#modules.hid_keyboard.hid_keyboard" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#core.module.Module" title="core.module.Module"><code class="xref py py-class docutils literal"><span class="pre">core.module.Module</span></code></a></p>
+<dl class="attribute">
+<dt id="modules.hid_keyboard.hid_keyboard.description">
+<code class="descname">description</code><em class="property"> = 'Parameters examples etc.'</em><a class="headerlink" href="#modules.hid_keyboard.hid_keyboard.description" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="modules.hid_keyboard.hid_keyboard.execute">
+<code class="descname">execute</code><span class="sig-paren">(</span><em>paylad</em>, <em>device</em><span class="sig-paren">)</span><a class="headerlink" href="#modules.hid_keyboard.hid_keyboard.execute" title="Permalink to this definition">¶</a></dt>
+<dd><p>It&#8217;s executed after all parameters all set.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="modules.hid_keyboard.hid_keyboard.name">
+<code class="descname">name</code><em class="property"> = 'hid_keyboard'</em><a class="headerlink" href="#modules.hid_keyboard.hid_keyboard.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="modules.hid_keyboard.hid_keyboard.parameters">
+<code class="descname">parameters</code><em class="property"> = {'sleep_enabled': {'default': 'True', 'required': 'True', 'description': 'Does device have to sleep before start after power on.'}, 'sleep_time': {'default': '10', 'required': 'True', 'description': 'Number of seconds to sleep.'}}</em><a class="headerlink" href="#modules.hid_keyboard.hid_keyboard.parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="modules.hid_keyboard.hid_keyboard.payload_actions">
+<code class="descname">payload_actions</code><em class="property"> = ['keyboard_write', 'sleep']</em><a class="headerlink" href="#modules.hid_keyboard.hid_keyboard.payload_actions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="modules.hid_keyboard.hid_keyboard.payload_description">
+<code class="descname">payload_description</code><em class="property"> = 'Information about how we can construct payload'</em><a class="headerlink" href="#modules.hid_keyboard.hid_keyboard.payload_description" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="modules.hid_keyboard.hid_keyboard.required_actions">
+<code class="descname">required_actions</code><em class="property"> = ['keyboard_write', 'sleep', 'program']</em><a class="headerlink" href="#modules.hid_keyboard.hid_keyboard.required_actions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="modules.hid_keyboard.hid_keyboard.short_description">
+<code class="descname">short_description</code><em class="property"> = 'Turns device into HID keyboard that sends constant payload after plugin'</em><a class="headerlink" href="#modules.hid_keyboard.hid_keyboard.short_description" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="modules.hid_keyboard.hid_keyboard.validate">
+<code class="descname">validate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#modules.hid_keyboard.hid_keyboard.validate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="modules.hid_keyboard.init">
+<code class="descclassname">modules.hid_keyboard.</code><code class="descname">init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#modules.hid_keyboard.init" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="id4">
+<h3>Module contents<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<span class="target" id="module-modules"></span></div>
+</div>
+<div class="section" id="devices-package">
+<h2>devices package<a class="headerlink" href="#devices-package" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h3>Submodules<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="module-devices.digispark">
+<span id="devices-digispark-module"></span><h3>devices.digispark module<a class="headerlink" href="#module-devices.digispark" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="devices.digispark.Digispark">
+<em class="property">class </em><code class="descclassname">devices.digispark.</code><code class="descname">Digispark</code><a class="headerlink" href="#devices.digispark.Digispark" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#core.device.Device" title="core.device.Device"><code class="xref py py-class docutils literal"><span class="pre">core.device.Device</span></code></a></p>
+<dl class="method">
+<dt id="devices.digispark.Digispark.action_keyboard_write">
+<code class="descname">action_keyboard_write</code><span class="sig-paren">(</span><em>input</em><span class="sig-paren">)</span><a class="headerlink" href="#devices.digispark.Digispark.action_keyboard_write" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="devices.digispark.Digispark.action_mouse_move">
+<code class="descname">action_mouse_move</code><span class="sig-paren">(</span><em>input</em><span class="sig-paren">)</span><a class="headerlink" href="#devices.digispark.Digispark.action_mouse_move" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="devices.digispark.Digispark.action_program">
+<code class="descname">action_program</code><span class="sig-paren">(</span><em>input</em><span class="sig-paren">)</span><a class="headerlink" href="#devices.digispark.Digispark.action_program" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="devices.digispark.Digispark.action_sleep">
+<code class="descname">action_sleep</code><span class="sig-paren">(</span><em>input</em><span class="sig-paren">)</span><a class="headerlink" href="#devices.digispark.Digispark.action_sleep" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="devices.digispark.Digispark.dependency_check">
+<code class="descname">dependency_check</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#devices.digispark.Digispark.dependency_check" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="devices.digispark.Digispark.dev_info">
+<code class="descname">dev_info</code><em class="property"> = None</em><a class="headerlink" href="#devices.digispark.Digispark.dev_info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="devices.digispark.Digispark.get_info">
+<code class="descname">get_info</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#devices.digispark.Digispark.get_info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="devices.digispark.Digispark.info">
+<code class="descname">info</code><em class="property"> = '\n    The Digispark is an Attiny85 based microcontroller development board \n    similar to the Arduino line, only cheaper, smaller, and a bit less \n    powerful. With a whole host of shields to extend its functionality \n    and the action to use the familiar Arduino IDE the Digispark is a \n    great way to jump into electronics, or perfect for when an Arduino \n    is too big or too much.\n    '</em><a class="headerlink" href="#devices.digispark.Digispark.info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="devices.digispark.Digispark.name">
+<code class="descname">name</code><em class="property"> = 'Digispark'</em><a class="headerlink" href="#devices.digispark.Digispark.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="devices.digispark.Digispark.parameters">
+<code class="descname">parameters</code><em class="property"> = {'print_dev_info': {'default': 'True', 'required': 'True', 'description': 'If true, device information will be printed when programing.', 'value': 'True'}}</em><a class="headerlink" href="#devices.digispark.Digispark.parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="devices.digispark.Digispark.print_info">
+<code class="descname">print_info</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#devices.digispark.Digispark.print_info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="devices.digispark.Digispark.short_description">
+<code class="descname">short_description</code><em class="property"> = 'AVR Attiny85 uC based cheap device with software USB support.'</em><a class="headerlink" href="#devices.digispark.Digispark.short_description" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="devices.digispark.Digispark.validate">
+<code class="descname">validate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#devices.digispark.Digispark.validate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="devices.digispark.init">
+<code class="descclassname">devices.digispark.</code><code class="descname">init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#devices.digispark.init" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="id6">
+<h3>Module contents<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<span class="target" id="module-devices"></span></div>
+</div>
+<div class="section" id="payloads-package">
+<h2>payloads package<a class="headerlink" href="#payloads-package" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id7">
+<h3>Submodules<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="module-payloads.keyboard_hello_world">
+<span id="payloads-keyboard-hello-world-module"></span><h3>payloads.keyboard_hello_world module<a class="headerlink" href="#module-payloads.keyboard_hello_world" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="payloads.keyboard_hello_world.init">
+<code class="descclassname">payloads.keyboard_hello_world.</code><code class="descname">init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#payloads.keyboard_hello_world.init" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="payloads.keyboard_hello_world.keyboard_hello_world">
+<em class="property">class </em><code class="descclassname">payloads.keyboard_hello_world.</code><code class="descname">keyboard_hello_world</code><a class="headerlink" href="#payloads.keyboard_hello_world.keyboard_hello_world" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#core.payload.Payload" title="core.payload.Payload"><code class="xref py py-class docutils literal"><span class="pre">core.payload.Payload</span></code></a></p>
+<p>Name of payload.</p>
+<dl class="method">
+<dt id="payloads.keyboard_hello_world.keyboard_hello_world.get_payload">
+<code class="descname">get_payload</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#payloads.keyboard_hello_world.keyboard_hello_world.get_payload" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="payloads.keyboard_hello_world.keyboard_hello_world.info">
+<code class="descname">info</code><em class="property"> = &quot;PoC for testing new device with keyboard abilities\nIt's simple sending constant string 'Hello World' and does nothing else ;-).\n    &quot;</em><a class="headerlink" href="#payloads.keyboard_hello_world.keyboard_hello_world.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shor description</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="payloads.keyboard_hello_world.keyboard_hello_world.name">
+<code class="descname">name</code><em class="property"> = 'keyboard_hello_world'</em><a class="headerlink" href="#payloads.keyboard_hello_world.keyboard_hello_world.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="payloads.keyboard_hello_world.keyboard_hello_world.parameters">
+<code class="descname">parameters</code><em class="property"> = {'uppercase': {'default': 'False', 'required': 'True', 'description': 'If true module will output uppercase HELLO WORLD.', 'value': 'False'}}</em><a class="headerlink" href="#payloads.keyboard_hello_world.keyboard_hello_world.parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="payloads.keyboard_hello_world.keyboard_hello_world.satisfied_actions">
+<code class="descname">satisfied_actions</code><em class="property"> = ['keyboard_write', 'sleep']</em><a class="headerlink" href="#payloads.keyboard_hello_world.keyboard_hello_world.satisfied_actions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="payloads.keyboard_hello_world.keyboard_hello_world.short_description">
+<code class="descname">short_description</code><em class="property"> = &quot;Device after plugin writes 'Hello World' as a keyboard.&quot;</em><a class="headerlink" href="#payloads.keyboard_hello_world.keyboard_hello_world.short_description" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abilities that is required by payload.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="payloads.keyboard_hello_world.keyboard_hello_world.validate">
+<code class="descname">validate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#payloads.keyboard_hello_world.keyboard_hello_world.validate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="id8">
+<h3>Module contents<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<span class="target" id="module-payloads"></span></div>
+</div>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html#document-index">Table Of Contents</a></h3>
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-intro">Introduction.</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#why">Why?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#for-whom">For whom?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#disclaimer">Disclaimer.</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-licence">Licence.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-authors">Authors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#karol-celinski">Karol Celiński</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#pawel-maziarz">Paweł Maziarz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#andrzej-nowodworski">Andrzej Nowodworski</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-immunity">Immunity Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-requirements">Project requirements.</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#modules">Modules.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#privilidges">Privilidges.</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-quickstart">Quick start Guide.</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#concept">Concept.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#getting-help">Getting help.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#modules">Modules.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#devices">Devices.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#payloads">Payloads.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#actions">Actions.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#writting-your-own-module-device-payload">Writting your own module/device/payload.</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-kkk">Keyboard keys keywords.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-source">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#module-HackerInsideDude">HackerInsideDude module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#core-package">core package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#subpackages">Subpackages</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#module-core.action">core.action module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#module-core.action_manager">core.action_manager module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#module-core.consts">core.consts module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#module-core.device">core.device module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#module-core.module">core.module module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#module-core.payload">core.payload module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#module-core.validators">core.validators module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#module-core.various">core.various module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#module-core">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#core-actions-package">core.actions package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id1">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#module-core.actions.keyboard_write">core.actions.keyboard_write module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#module-core.actions.mouse_move">core.actions.mouse_move module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#module-core.actions.program">core.actions.program module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#module-core.actions.sleep">core.actions.sleep module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id2">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#modules-package">modules package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id3">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#module-modules.hid_keyboard">modules.hid_keyboard module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id4">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#devices-package">devices package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id5">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#module-devices.digispark">devices.digispark module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id6">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#payloads-package">payloads package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id7">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#module-payloads.keyboard_hello_world">payloads.keyboard_hello_world module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id8">Module contents</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html#document-index">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Immunity Systems.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.9</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>
