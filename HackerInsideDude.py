@@ -257,7 +257,7 @@ Options:
         if len(self.modules[self.active_module].payload_actions)>0:
                 self.current_parameters = {"module":["payload"], "device":[], "payload":[]}
                 if "payload" not in Cmd.settable:
-                        Cmd.settable.append("payload")
+                        Cmd.settable["payload"]="payload to run"
                 #initialize parameters and payload
                 if getattr(self.modules[self.active_module], "payload", None) is None:
                         self.modules[self.active_module].payload=""
@@ -271,7 +271,7 @@ Options:
                         p["value"]=p["default"]
                 setattr(self,name,p["value"])
                 self.current_parameters["module"].append(name)
-                Cmd.settable.append(name)
+                Cmd.settable[name]=""
         if not self.modules[self.active_module].payload_custom:
                 self.use_payload("payload "+self.modules[self.active_module].loaded_payload)
         self.prompt = Cmd().colorize("HID [","green")+ \
@@ -300,7 +300,7 @@ Options:
                         p["value"]=p["default"]
                 setattr(self,name,p["value"])
                 self.current_parameters["device"].append(name)
-                Cmd.settable.append(name)
+                Cmd.settable[name]=""
 
         self.prompt = Cmd().colorize("HID [","green")+ \
                       Cmd().colorize(self.active_module,"red")+ \
@@ -325,7 +325,7 @@ Options:
                         p["value"]=p["default"]
                 setattr(self,name,p["value"])
                 self.current_parameters["payload"].append(name)
-                Cmd.settable.append(name)
+                Cmd.settable[name]=""
         self.modules[self.active_module].loaded_payload=line.split()[1]
         self.prompt = Cmd().colorize("HID [","green")+ \
                       Cmd().colorize(self.active_module,"red")+ \
