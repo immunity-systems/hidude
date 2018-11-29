@@ -15,8 +15,9 @@ class hid_keyboard(Module):
         name = "hid_keyboard"
         short_description = "Turns device into HID keyboard that sends constant payload after plugin"
         payload_actions = ["keyboard_write", "sleep"]
-        description = "In payload you can use %s " % " ".join(payload_actions)
-        required_actions = payload_actions + ["program"] 
+        payload_description = "In payload you can use %s " % " ".join(payload_actions)
+        description = " ".join([short_description, payload_description])
+        required_actions = payload_actions + ["program"]
         parameters = {
                 'sleep_enabled': {
                         'description':"Does device have to sleep before start after power on.",

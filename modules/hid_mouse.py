@@ -15,7 +15,8 @@ class hid_mouse(Module):
         name = "hid_mouse"
         short_description = "Turns device into HID mouse that spoof moves, clicks based on const payload after plugin"
         payload_actions = ["sleep", "mouse_move", "mouse_click", "mouse_scroll"]
-        description = "In payload you can use %s " % " ".join(payload_actions)
+        payload_description = "In payload you can use %s " % " ".join(payload_actions)
+        description = " ".join([short_description, payload_description])
         required_actions = payload_actions + ["program"] 
         parameters = {
                 'sleep_enabled': {
